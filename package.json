@@ -2,7 +2,7 @@
   "dependencies": {
     "chalk": "^5.3.0"
   },
-  "name": "studies-nodejs",
+  "name": "node-md-links-validator",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
