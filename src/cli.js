@@ -1,16 +1,22 @@
+
 import fs from "fs";
 import getFile from "./index.js";
 import validatedList from "./http-valid.js";
 
 const path = process.argv;
 
-function printList(valid, result, identifier = "") {
+// Aqui é a função onde a lista vai ser exibida
+
+async function printList(valid, result, identifier = "") {
   if (valid) {
-    console.log("Lista validada", identifier, validatedList(result));
+    console.log("Lista validada", identifier, await validatedList(result));
   } else {
     console.log("Lista de links", identifier, result);
   }
 }
+
+//Função que lida com o processamento de arquivos ou diretórios
+
 async function wordProcessing(args) {
   // Peguei a posição 2 pq o "process.argv" retorna 2 valores anteriores a ele
   const path = args[2];

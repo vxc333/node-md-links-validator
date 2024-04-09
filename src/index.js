@@ -1,5 +1,6 @@
 import fs from "fs";
 
+// Função que vai extrair os links do arquivo .md
 function extractLinks(text) {
   const regex = /\[([^[\]]*?)\]\((https?:\/\/[^\s?#.].[^\s]*)\)/gm;
   const catches = [...text.matchAll(regex)];
@@ -7,6 +8,8 @@ function extractLinks(text) {
   return result.length !== 0 ? result : "Não há links no arquivo!";
 }
 
+
+// Função responsável pela leitura dos arquivos
 async function getFile(filePath) {
   try {
     const encoding = "utf-8";
